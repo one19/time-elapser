@@ -1,0 +1,22 @@
+{
+  "name": "time-elapser",
+  "version": "0.0.0",
+  "description": "upload images taken at a specific interval to cloudinary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'lol no tests'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/one19/time-elapser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/one19/time-elapser/issues"
+  },
+  "homepage": "https://github.com/one19/time-elapser#readme",
+  "dependencies": {
+    "cloudinary": "^1.28.1"
+  }
+}
