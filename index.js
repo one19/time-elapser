@@ -13,22 +13,28 @@ cloudinary.config({
   secure: true,
 });
 
-const uploadPhoto = async () => {
+const uploadPhoto = async (deviceId = '/dev/video2') => {
   console.time('full flow');
   const date = new Date().toISOString().replace(/\:/g, '-');
 
-  console.log('above image taken');
-  await execPromise(`ffmpeg -f v4l2 -i /dev/video2 -vframes 1 "${date}.jpeg"`);
+  // get the image from our USB camera
+  await execPromise(`ffmpeg -f v4l2 -i ${deviceId} -vframes 1 "${date}.jpeg"`);
 
-  console.log('above upload');
-  await cloudinary.uploader.upload(`./${date}.jpeg`, { use_filename: true, folder: 'time-elapser', async: true });
+  // upload it to cloudinary in our big time-elapser folder
+  await cloudinary.uploader.upload(`./${date}.jpeg`,
+    {
+      unique_filename: false,
+      folder: 'time-elapser',
+      use_filename: true,
+      async: true,
+    }
+  );
 
-  console.log('above delete');
+  // delete the image
   await rmPromise(`./${date}.jpeg`);
-
   console.timeEnd('full flow');
 };
 
 setInterval(() => {
   uploadPhoto();
-}, 48000);
+}, 48000); // 48 seconds === 30 second 60fps gif of 24 hours
