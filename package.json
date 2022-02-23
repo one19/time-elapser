@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/one19/time-elapser#readme",
   "dependencies": {
-    "cloudinary": "^1.28.1"
+    "async-get-file": "^1.0.4",
+    "aws-sdk": "^2.1077.0",
+    "cloudinary": "^1.28.1",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
   }
 }
