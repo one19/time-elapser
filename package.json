@@ -20,7 +20,8 @@
     "async-get-file": "^1.0.4",
     "aws-sdk": "^2.1077.0",
     "cloudinary": "^1.28.1",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "node-cron": "^3.0.0"
   },
   "devDependencies": {
     "jest": "^27.5.1"

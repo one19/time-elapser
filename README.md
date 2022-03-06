@@ -9,3 +9,4 @@ there may be iso adjustment parameters that are necessary to make a good video w
 
 ### useful commands:
 `v4l2-ctl --list-devices`
+`ffmpeg -i ./photos/%d.jpg -c:v libx264 -vf fps=60 -pix_fmt yuv420p out.mp4`

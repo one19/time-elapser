@@ -8,9 +8,9 @@ const cloudinary = require('cloudinary').v2;
 const execPromise = promisify(exec);
 
 cloudinary.config({
-  api_key: process.env.API_KEY,
+  api_key: process.env.FETCH_API_KEY,
   cloud_name: process.env.CLOUD_NAME,
-  api_secret: process.env.API_SECRET,
+  api_secret: process.env.FETCH_API_SECRET,
   secure: true,
 });
 
